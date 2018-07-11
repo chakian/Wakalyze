@@ -27,16 +27,25 @@ namespace Wakalyze.Web.Controllers
         {
             if (file.Length > 0 && file.ContentType == "application/json")
             {
-                MemoryStream memory = new MemoryStream();
-                using (Stream stream = file.OpenReadStream())
+                try
                 {
-                    stream.CopyTo(memory);
-                }
-                memory.Position = 0;
-                ImportedJsonModel imported = JsonConvert.DeserializeObject<ImportedJsonModel>(Encoding.Default.GetString(memory.ToArray()));
-            }
+                    MemoryStream memory = new MemoryStream();
+                    using (Stream stream = file.OpenReadStream())
+                    {
+                        stream.CopyTo(memory);
+                    }
+                    memory.Position = 0;
+                    ImportedJsonModel imported = JsonConvert.DeserializeObject<ImportedJsonModel>(Encoding.Default.GetString(memory.ToArray()));
 
-            ViewData["Message"] = "Imported.";
+                    //TODO: Write data to Mongo
+
+                    ViewData["Message"] = "Imported.";
+                }
+                catch
+                {
+                    ViewData["Message"] = "Failed to read data";
+                }
+            }
 
             return View();
         }
