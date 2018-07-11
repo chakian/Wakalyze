@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
+using System.IO;
+using System.Text;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using Wakalyze.Web.Models;
 
 namespace Wakalyze.Web.Controllers
@@ -15,14 +15,33 @@ namespace Wakalyze.Web.Controllers
             return View();
         }
 
-        public IActionResult About()
+        public IActionResult ImportByJson()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "Import by json";
 
             return View();
         }
 
-        public IActionResult Contact()
+        [HttpPost]
+        public IActionResult ImportByJson(IFormFile file)
+        {
+            if (file.Length > 0 && file.ContentType == "application/json")
+            {
+                MemoryStream memory = new MemoryStream();
+                using (Stream stream = file.OpenReadStream())
+                {
+                    stream.CopyTo(memory);
+                }
+                memory.Position = 0;
+                ImportedJsonModel imported = JsonConvert.DeserializeObject<ImportedJsonModel>(Encoding.Default.GetString(memory.ToArray()));
+            }
+
+            ViewData["Message"] = "Imported.";
+
+            return View();
+        }
+
+        public IActionResult ImportByApi()
         {
             ViewData["Message"] = "Your contact page.";
 

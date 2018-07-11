@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "About";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Message"]</h3>
+
+<form method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="ImportByJson">
+    <label for="file">Choose Json File</label> <input type="file" name="file" />
+
+    <input type="submit" id="submitJson" value="Submit">
+</form>
