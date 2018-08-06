@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2018
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wakalyze.Web", "Wakalyze.Web\Wakalyze.Web.csproj", "{1FC8EC15-7524-4972-888D-ECDB419BB45C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wakalyze.Web", "Wakalyze.Web\Wakalyze.Web.csproj", "{1FC8EC15-7524-4972-888D-ECDB419BB45C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wakalyze.Business", "Wakalyze.Business\Wakalyze.Business.csproj", "{6A890C4E-0731-470C-8F96-46D2B8A47C07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wakalyze.Entity", "Wakalyze.Entity\Wakalyze.Entity.csproj", "{616E1C9B-35BD-4D73-BF5F-666DF36457AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{1FC8EC15-7524-4972-888D-ECDB419BB45C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1FC8EC15-7524-4972-888D-ECDB419BB45C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1FC8EC15-7524-4972-888D-ECDB419BB45C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A890C4E-0731-470C-8F96-46D2B8A47C07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A890C4E-0731-470C-8F96-46D2B8A47C07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A890C4E-0731-470C-8F96-46D2B8A47C07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A890C4E-0731-470C-8F96-46D2B8A47C07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{616E1C9B-35BD-4D73-BF5F-666DF36457AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{616E1C9B-35BD-4D73-BF5F-666DF36457AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{616E1C9B-35BD-4D73-BF5F-666DF36457AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{616E1C9B-35BD-4D73-BF5F-666DF36457AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -4,6 +4,7 @@ using System.Text;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using Wakalyze.Entity;
 using Wakalyze.Web.Models;
 
 namespace Wakalyze.Web.Controllers
